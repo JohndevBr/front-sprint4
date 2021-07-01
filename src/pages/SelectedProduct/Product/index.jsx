@@ -10,7 +10,7 @@ export default function Product(){
     const [product, setProduct] = useState([])
     const [selectedValue, setSelectedValue]= useState(0)
 
-    useEffect(() => loadProducts(), []);
+    useEffect(() => loadProducts());
 
     function loadProducts() {
         
