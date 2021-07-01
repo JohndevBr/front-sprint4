@@ -1,14 +1,16 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import FilterContext from "../../contexts/FilterContext";
 import LoadingContext from "../../contexts/LoadingContext";
 import MessageContext from "../../contexts/MessageContext";
 import ProductsService from "../../services/ProductsService";
-import Breadcrumbs from "./components/Breadcrumbs";
-import Filters from "./components/Filters";
+import Breadcrumbs from "./Breadcrumbs";
+import Filters from "./Filters";
 
-function Product({ image, name, price }) {
+function Product({ image, name, price, id }) {
     return (
-        <li className="products__card card">
+        
+        <Link to={`/produto/${id}`} className="products__card card" >
             <div className="card">
                 <img className="card__img" src={image} alt="" />
                 <p className="card__description">
@@ -18,7 +20,7 @@ function Product({ image, name, price }) {
                     R$ {price}
                 </p>
             </div>
-        </li>
+        </Link>
     );
 }
 
@@ -56,7 +58,7 @@ function ProductsPage() {
                                 filter ? p.name.toUpperCase().indexOf(filter.toUpperCase()) !== -1 : true)
                             .map(
                                 p =>
-                                    <Product key={p.sku} image={p.image} name={p.name} price={p.price} />
+                                    <Product key={p.sku} image={p.image} name={p.name} price={p.price} id={p.sku} />
                             )
                         }
                     </ol>

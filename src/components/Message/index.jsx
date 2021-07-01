@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import MessageContext from "../contexts/MessageContext";
+import MessageContext from "../../contexts/MessageContext";
 import './Message.css';
 
-function Message() {
+export default function Message() {
     const { message, setMessage } = useContext(MessageContext);
 
     return (
@@ -13,5 +13,3 @@ function Message() {
         </div>
     );
 }
-
-export default Message;

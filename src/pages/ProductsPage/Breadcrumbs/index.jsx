@@ -16,7 +16,7 @@ function BreadcrumbItem({ link, label }) {
     );
 }
 
-function Breadcrumbs() {
+export default function Breadcrumbs() {
     const { categories } = useContext(CategoriesContext);
 
     return (
@@ -29,5 +29,3 @@ function Breadcrumbs() {
         </section>
     )
 }
-
-export default Breadcrumbs;

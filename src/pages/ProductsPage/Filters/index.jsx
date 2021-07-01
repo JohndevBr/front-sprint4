@@ -7,7 +7,7 @@ function FilterItem({ label }) {
     );
 }
 
-function Filters({ filters }) {
+export default function Filters({ filters }) {
     return (
         <section className="main__filters filters">
             <ul className="filters__list">
@@ -17,4 +17,3 @@ function Filters({ filters }) {
     );
 }
 
-export default Filters;

@@ -1,16 +1,24 @@
 import { useEffect, useState } from 'react';
-import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Message from './components/Message';
 import Spinner from './components/Spinner';
+
+
 import CategoriesContext from './contexts/CategoriesContext';
 import FilterContext from './contexts/FilterContext';
 import LoadingContext from './contexts/LoadingContext';
 import MessageContext from './contexts/MessageContext';
+
+
 import useLoading from './hooks/useLoading';
-import ProductsPage from './pages/products/ProductsPage';
+
+import Routes from './routes'
+
 import CategoriesService from './services/CategoriesService';
+
+import { GlobalStyle } from "./styles/global"
+
 
 function App() {
   const [filter, setFilter] = useState('');
@@ -38,12 +46,13 @@ function App() {
             <div className="page-container">
               <Message></Message>
               <Header></Header>
-              <ProductsPage></ProductsPage>
+              <Routes />
             </div>
-            <Footer></Footer>
+            <Footer />
           </CategoriesContext.Provider>
         </MessageContext.Provider>
       </LoadingContext.Provider>
+      <GlobalStyle />s
     </FilterContext.Provider>
   );
 }
