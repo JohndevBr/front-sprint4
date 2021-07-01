@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useRouteMatch } from 'react-router-dom'
 import { Container, Content } from './styles'
-import { first } from 'lodash'
+import { first, set } from 'lodash'
+
+import MessageContext from "../../../contexts/MessageContext";
 
 import ProductsService from "../../../services/ProductService";
 
@@ -9,6 +11,11 @@ export default function Product(){
     const { params } = useRouteMatch();
     const [product, setProduct] = useState([])
     const [selectedValue, setSelectedValue]= useState(0)
+    const { setMessage } = useContext(MessageContext);
+
+    function handleAddcart() {
+        setMessage("Produto adicionado ao Carrinho")
+    }
 
     useEffect(() => loadProducts());
 
@@ -40,7 +47,7 @@ export default function Product(){
                 <div className="price-content">
                     <h2>R$ {product.price}</h2>
                     <div className="price-button">
-                        <button> <a href="/">Adicionar à Sacola</a></button>
+                        <button > <a onClick={handleAddcart}  href="/">Adicionar à Sacola</a></button>
                         <button> <a href="/">Cancelar</a></button>
                     </div>
 
