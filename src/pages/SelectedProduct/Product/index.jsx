@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from 'react'
 import { useRouteMatch } from 'react-router-dom'
 import { Container, Content } from './styles'
-import { first, set } from 'lodash'
+import { first } from 'lodash'
 
 import MessageContext from "../../../contexts/MessageContext";
 
