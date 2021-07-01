@@ -58,7 +58,7 @@ export const Content = styled.div`
     .price-content {
         margin-top: 2rem;
         padding: 2rem;
-        width: 500px;
+        width: 70%;
         
         border: 1px solid #ddd;
         box-shadow: 0 0 1em #ddd;
